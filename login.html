@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Login</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Poppins',sans-serif;background:linear-gradient(135deg,#6a11cb,#2575fc);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;color:#333}
+    .card{background:#fff;padding:36px;border-radius:18px;width:100%;max-width:420px;box-shadow:0 12px 30px rgba(0,0,0,.12);text-align:left}
+    h1{color:#2575fc;margin:0 0 16px 0;text-align:center}
+    form{display:flex;flex-direction:column;gap:12px}
+    label{font-weight:600;color:#2575fc}
+    input{padding:12px;border:2px solid #e6eefc;border-radius:10px}
+    button{padding:12px;background:#2575fc;color:#fff;border:0;border-radius:10px;font-weight:700;cursor:pointer}
+    .foot{font-size:.9rem;color:#666;text-align:center;margin-top:10px}
+    a.link{color:#2575fc;font-weight:700;text-decoration:none}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Masuk</h1>
+    <form id="loginForm" autocomplete="off">
+      <label for="identity">Username atau Email</label>
+      <input id="identity" type="text" placeholder="username atau email" required />
+      <label for="password">Password</label>
+      <input id="password" type="password" placeholder="password" required />
+      <button type="submit">Masuk</button>
+    </form>
+
+    <p class="foot">Belum punya akun? <a class="link" href="register.html">Daftar sekarang</a></p>
+  </div>
+
+  <script>
+    // Cek users di localStorage (key "users"), simpan session "currentUser", redirect ke menu.html
+    document.getElementById('loginForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const identity = document.getElementById('identity').value.trim().toLowerCase();
+      const password = document.getElementById('password').value;
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+
+      if (!users.length) {
+        alert('Belum ada akun terdaftar. Silakan daftar terlebih dahulu.');
+        location.href = 'register.html';
+        return;
+      }
+
+      const found = users.find(u => {
+        const uname = (u.username||'').toLowerCase();
+        const email = (u.email||'').toLowerCase();
+        return (uname === identity || email === identity) && u.password === password;
+      });
+
+      if (!found) {
+        alert('Username/email atau password salah.');
+        return;
+      }
+
+      // simpan session sederhana
+      localStorage.setItem('currentUser', JSON.stringify({
+        username: found.username,
+        fullname: found.fullname || '',
+        email: found.email || ''
+      }));
+
+      // redirect ke menu.html (pastikan menu.html berada di folder yang sama)
+      location.href = 'menu.html';
+    });
+  </script>
+</body>
+</html>
+```// filepath: c:\Users\Hype\OneDrive\Documents\coding

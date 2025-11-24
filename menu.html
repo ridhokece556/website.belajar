@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Menu Utama Aplikasi Belajar</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 40px 20px;
+      color: #333;
+    }
+    
+    header {
+      color: #fff;
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 50px;
+      text-shadow: 0 3px 6px rgba(0,0,0,0.3);
+      letter-spacing: 1.2px;
+    }
+    
+    nav {
+      background: #fff;
+      border-radius: 20px;
+      width: 100%;
+      max-width: 480px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+      padding: 30px 0;
+    }
+    
+    ul.menu {
+      list-style: none;
+      width: 90%;
+      margin: 0 auto;
+    }
+    
+    ul.menu li {
+      margin: 15px 0;
+    }
+    
+    ul.menu li a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: #2575fc;
+      font-weight: 600;
+      font-size: 1.15rem;
+      background: #eef4ff;
+      padding: 15px 25px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(37, 117, 252, 0.2);
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    
+    ul.menu li a:hover {
+      background-color: #2575fc;
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(37, 117, 252, 0.6);
+    }
+    
+    ul.menu li a svg {
+      margin-right: 15px;
+      flex-shrink: 0;
+      stroke-width: 2.5;
+      stroke: currentColor;
+      width: 28px;
+      height: 28px;
+      transition: stroke 0.3s ease;
+    }
+    
+    ul.menu li a:hover svg {
+      stroke: #fff;
+    }
+    
+    @media (max-width: 500px) {
+      header {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+      }
+      ul.menu li a {
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
+      ul.menu li a svg {
+        width: 22px;
+        height: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Menu Utama Aplikasi Belajar
+  </header>
+
+  <nav>
+    <ul class="menu">
+      <li>
+        <a href="#">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" 
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M13 5v6h6"></path>
+          </svg>
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" 
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m-6-8h6M4 6h16M4 18h16"></path>
+          </svg>
+          Manajemen Tugas
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" 
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h12a2 2 0 012 2z"></path>
+          </svg>
+          Diskusi Kelompok
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" 
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 12a4 4 0 01-8 0m8 0a4 4 0 10-8 0"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 14v7"></path>
+          </svg>
+          Latihan Soal
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" 
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 20h9"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 4H3"></path>
+          </svg>
+          Catatan Digital
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" 
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="12" cy="7" r="4" stroke-linecap="round" stroke-linejoin="round"></circle>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5.5 21a7 7 0 0113 0"></path>
+          </svg>
+          Profil Siswa
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" 
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M21 10a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          Bantuan & Tutorial
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+</body>
+</html>
